@@ -8,7 +8,7 @@ Endpoint | HTTP Method | Description | Parameters
 ------------ | ------------------| --------------- | ------------
 / | GET | Welcome message and instructions | None
 /messages | GET | Get all messages | None
-/messages | POST | Send a new message  |`{"subject":string,"body":string,"sender":string }`
+/messages | POST | Send a new message  |`{"subject":string,"body":string,"sender":string}`
 /messages/{id} | GET | Read a message by its id| None 
 /messages/{id} | DELETE | Delete a message | None
 
