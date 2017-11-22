@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lilmsg API - help</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+    <header>
+        <h1>How to use</h1>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Endpoint</th>
+                    <th>HTTP Method</th>
+                    <th>Description</th>
+                    <th>Parameters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>/</td>
+                    <td>GET</td>
+                    <td>Welcome message and instructions</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>/messages</td>
+                    <td>GET</td>
+                    <td>GET all messages</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>/messages</td>
+                    <td>POST</td>
+                    <td>Send a new message</td>
+                    <td>
+                        <code>
+                            {
+                                "subject": string,
+                                "body": string,
+                                "sender": string
+                            }
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>/messages/{id}</td>
+                    <td>GET</td>
+                    <td>Read a message by its id</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>/messages/{id}</td>
+                    <td>DELETE</td>
+                    <td>Delete a message</td>
+                    <td>None</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

@@ -4,6 +4,7 @@ const sqlite = require('sqlite3');
 let app = express();
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 var initDatabase = (conn) => {
     conn.run('CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY, subject TEXT NOT NULL, body TEXT NOT NULL, sender TEXT NOT NULL, date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, deleted BOOLEAN default false);');
@@ -45,7 +46,7 @@ let validateMessage = (messageObj) => {
 };
 
 app.get('/', (req, res) => {
-    res.send('Hello!');
+    res.send('Hello! For how to use our API, visit <a href="/help" title="Help page">our help page</>.');
 });
 
 app.get('/messages', (req, res) => {
@@ -109,6 +110,10 @@ app.delete('/messages/:id', (req, res) => {
         res.status(204).send();
     });
 
+});
+
+app.get('/help',  (req, res) => {
+    res.sendFile(__dirname + '/public/help.html');
 });
 
 app.listen(3000);
